@@ -1,14 +1,11 @@
-package com.idealo.exercise.repository;
+package com.dating.matcher.repository;
 
-import com.idealo.exercise.model.Item;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;
-import org.springframework.data.repository.query.Param;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-import java.math.BigDecimal;
+import com.dating.matcher.domain.MatchDocument;
 
-public interface ItemRepository extends PagingAndSortingRepository<Item, Long> {
+@RepositoryRestResource(collectionResourceRel = "matches", path = "matches")
+public interface MatchRepository extends PagingAndSortingRepository<MatchDocument, String> {
 
-    Page<Item> findByCategory_IdAndPriceBetween(@Param("id") Long id, BigDecimal min, BigDecimal max, Pageable pageable);
 }

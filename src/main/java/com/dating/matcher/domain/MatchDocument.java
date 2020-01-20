@@ -3,33 +3,31 @@ package com.dating.matcher.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.Builder;
 import lombok.Data;
 
-@Builder
-@Data
 @Document(collection = "matches")
-public class Match {
+@Data
+public class MatchDocument {
     @Id
     private String id;
 
-    String displayName;
+    private String displayName;
 
-    int age;
+    private int age;
 
-    String jobTitle;
+    private String jobTitle;
 
-    float height;
+    private float height;
 
-    City city;
+    private CityDocument city;
 
-    String mainPhoto;
+    private String mainPhoto;
 
-    float compatibilityScore;
+    private float compatibilityScore;
 
-    int contactsExchanged;
+    private int contactsExchanged;
 
-    boolean favourite;
+    private boolean favourite;
 
-    String religion;
+    private String religion;
 }

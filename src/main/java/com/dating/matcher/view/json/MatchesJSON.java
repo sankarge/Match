@@ -1,18 +1,14 @@
-package com.dating.matcher.util;
+package com.dating.matcher.view.json;
 
 import java.util.List;
 
-import com.dating.matcher.domain.Match;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Builder
-@Data
 @NoArgsConstructor
-@AllArgsConstructor
-public class Matches {
-    List<Match> matches;
+@Getter
+@Setter
+public class MatchesJSON {
+    private List<MatchJSON> matches;
 }

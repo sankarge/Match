@@ -10,7 +10,7 @@
         "lat": 53.801277,
         "lon": -1.548567
       },
-      "main_photo": "http://thecatapi.com/api/images/get?format=src&type=gif",
+      "main_photo": "https://randomuser.me/api/portraits/women/4.jpg",
       "compatibility_score": 0.76,
       "contacts_exchanged": 2,
       "favourite": true,
