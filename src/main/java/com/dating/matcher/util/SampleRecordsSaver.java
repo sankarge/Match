@@ -7,7 +7,6 @@ import java.io.InputStream;
 import java.util.List;
 
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 import com.dating.matcher.repository.MatchRepository;
 import com.dating.matcher.view.json.MatchJSON;
