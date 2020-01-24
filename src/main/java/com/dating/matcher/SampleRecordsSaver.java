@@ -18,7 +18,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 
 @Component
-@Profile("sampleRecords")
+@Profile("saveSampleMatches")
 @RequiredArgsConstructor
 public class SampleRecordsSaver implements CommandLineRunner {
 

@@ -32,6 +32,11 @@ public class MatchService {
     }
 
     public List<Match> filter(MatchFilter filter) {
+        MatchFilter matchFilter = filter == null ? MatchFilter.NONE : filter;
+        return filterMatch(matchFilter);
+    }
+
+    private List<Match> filterMatch(MatchFilter filter) {
         NearQuery query = constructQuery(filter);
 
         return executeQuery(query)
