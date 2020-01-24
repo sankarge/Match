@@ -1,4 +1,4 @@
-package com.dating.matcher.view.json;
+package com.dating.matcher.domain.model.view;
 
 import java.util.Optional;
 
@@ -8,7 +8,7 @@ import lombok.Setter;
 @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
 @Getter
 @Setter
-public class FilterRequest {
+public class MatchFilter {
     Optional<Boolean> hasPhoto = Optional.empty();
     Optional<Boolean> hasContact = Optional.empty();
     Optional<Boolean> isFavourite = Optional.empty();

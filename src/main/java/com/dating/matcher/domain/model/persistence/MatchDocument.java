@@ -1,4 +1,4 @@
-package com.dating.matcher.domain;
+package com.dating.matcher.domain.model.persistence;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -23,7 +23,7 @@ public class MatchDocument {
 
     private String mainPhoto;
 
-    private double compatibilityScore;
+    private int compatibilityScore;
 
     private int contactsExchanged;
 

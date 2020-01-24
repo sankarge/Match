@@ -38,8 +38,8 @@ class QueryBuilder {
     QueryBuilder withCompatibilityScore(Optional<Integer> csFrom, Optional<Integer> csTo) {
         if (csFrom.isPresent() || csTo.isPresent()) {
             Criteria criteria = Criteria.where("compatibilityScore");
-            csFrom.map(i -> (float) i / 100).ifPresent(criteria::gte);
-            csTo.map(i -> (float) i / 100).ifPresent(criteria::lte);
+            csFrom.ifPresent(criteria::gte);
+            csTo.ifPresent(criteria::lte);
             criteriaList.add(criteria);
         }
         return this;
@@ -88,7 +88,9 @@ class QueryBuilder {
     }
 
     private static NearQuery nearQuery(Integer distance) {
-        return NearQuery.near(LONDON_CENTRAL).maxDistance(new Distance(distance, Metrics.KILOMETERS));
+        return NearQuery
+                .near(LONDON_CENTRAL)
+                .maxDistance(new Distance(distance, Metrics.KILOMETERS));
     }
 
     private Query getQueryWithAllCriteria() {

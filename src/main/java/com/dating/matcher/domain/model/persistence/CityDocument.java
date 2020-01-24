@@ -1,4 +1,4 @@
-package com.dating.matcher.domain;
+package com.dating.matcher.domain.model.persistence;
 
 import org.springframework.data.geo.Point;
 

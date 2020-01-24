@@ -1,4 +1,4 @@
-package com.dating.matcher.view.json;
+package com.dating.matcher.domain.model.file;
 
 import java.util.List;
 
@@ -9,6 +9,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class MatchesJSON {
-    private List<MatchJSON> matches;
+public class Matches {
+    private List<Match> matches;
 }

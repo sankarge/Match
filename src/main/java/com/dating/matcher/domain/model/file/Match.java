@@ -1,4 +1,4 @@
-package com.dating.matcher.view.json;
+package com.dating.matcher.domain.model.file;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -9,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class MatchJSON {
+public class Match {
 
     @JsonProperty(value = "display_name")
     private String displayName;
@@ -22,13 +22,13 @@ public class MatchJSON {
     @JsonProperty(value = "height_in_cm")
     private double height;
 
-    private CityJSON city;
+    private City city;
 
     @JsonProperty(value = "main_photo")
     private String mainPhoto;
 
     @JsonProperty(value = "compatibility_score")
-    private double compatibilityScore;
+    private int compatibilityScore;
 
     @JsonProperty(value = "contacts_exchanged")
     private int contactsExchanged;
@@ -37,5 +37,8 @@ public class MatchJSON {
 
     private String religion;
 
-    private double dis;
+    @SuppressWarnings("unused")
+    public void setCompatibilityScore(Float compatibilityScore) {
+        this.compatibilityScore = (int) (compatibilityScore * 100);
+    }
 }

@@ -12,9 +12,9 @@ import org.springframework.data.mongodb.core.index.GeospatialIndex;
 import org.springframework.data.mongodb.core.query.NearQuery;
 import org.springframework.stereotype.Service;
 
-import com.dating.matcher.domain.MatchDocument;
-import com.dating.matcher.view.json.FilterRequest;
-import com.dating.matcher.view.json.MatchJSON;
+import com.dating.matcher.domain.model.persistence.MatchDocument;
+import com.dating.matcher.domain.model.view.Match;
+import com.dating.matcher.domain.model.view.MatchFilter;
 
 import lombok.RequiredArgsConstructor;
 
@@ -31,30 +31,33 @@ public class MatchService {
                 .ensureIndex(new GeospatialIndex("city.point"));
     }
 
-    public List<MatchJSON> filter(FilterRequest request) {
-        NearQuery query = constructQuery(request);
-        GeoResults<MatchJSON> results = mongoTemplate
-                .query(MatchDocument.class)
-                .as(MatchJSON.class)
-                .near(query)
-                .all();
+    public List<Match> filter(MatchFilter filter) {
+        NearQuery query = constructQuery(filter);
 
-        return results
+        return executeQuery(query)
                 .getContent()
                 .stream()
                 .map(GeoResult::getContent)
                 .collect(Collectors.toList());
     }
 
-    private NearQuery constructQuery(FilterRequest request) {
+    private GeoResults<Match> executeQuery(NearQuery query) {
+        return mongoTemplate
+                .query(MatchDocument.class)
+                .as(Match.class)
+                .near(query)
+                .all();
+    }
+
+    private NearQuery constructQuery(MatchFilter filter) {
         return QueryBuilder
                 .construct()
-                .withAge(request.getAgeFrom(), request.getAgeTo())
-                .withCompatibilityScore(request.getCsFrom(), request.getCsTo())
-                .withContacts(request.getHasContact())
-                .withFavourite(request.getIsFavourite())
-                .withHeight(request.getHeightFrom(), request.getHeightTo())
-                .withPhoto(request.getHasPhoto())
-                .withInDistance(request.getDistance());
+                .withAge(filter.getAgeFrom(), filter.getAgeTo())
+                .withCompatibilityScore(filter.getCsFrom(), filter.getCsTo())
+                .withContacts(filter.getHasContact())
+                .withFavourite(filter.getIsFavourite())
+                .withHeight(filter.getHeightFrom(), filter.getHeightTo())
+                .withPhoto(filter.getHasPhoto())
+                .withInDistance(filter.getDistance());
     }
 }

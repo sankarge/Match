@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dating.matcher.service.MatchService;
-import com.dating.matcher.view.json.FilterRequest;
-import com.dating.matcher.view.json.MatchJSON;
+import com.dating.matcher.domain.model.view.MatchFilter;
+import com.dating.matcher.domain.model.view.Match;
 
 import lombok.RequiredArgsConstructor;
 
@@ -22,8 +22,8 @@ public class MatchController {
 
     @GetMapping(value = "matches/filter")
     @ResponseBody
-    public ResponseEntity filterMatches(FilterRequest filterRequest) {
-        List<MatchJSON> filter = matchService.filter(filterRequest);
+    public ResponseEntity filterMatches(MatchFilter matchFilter) {
+        List<Match> filter = matchService.filter(matchFilter);
         return ResponseEntity.ok(filter);
     }
 }

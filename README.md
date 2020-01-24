@@ -2,13 +2,13 @@
 
 ## Match filter requests
 ```shell script
-http://localhost:8080/matches/filter
+/matches/filter
 
-http://localhost:9090/matches/filter?hasContact=1&hasPhoto=1&isFavourite=1
+/matches/filter?hasContact=1&hasPhoto=1&isFavourite=1
 
-http://localhost:9090/matches/filter?distance=2&isFavourite=0
+/matches/filter?ageTo=44&heightFrom=170&distance=2
 
-http://localhost:9090/matches/filter?distance=2&isFavourite=0&heightFrom=165&heightTo=175 \
+/matches/filter?distance=2&isFavourite=0&heightFrom=165&heightTo=175 \
 &ageFrom40&ageTo=50&csFrom=80&csTo=88&hasPhoto=1&hasContact=1
 ```
 
