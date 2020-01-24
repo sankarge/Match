@@ -17,13 +17,13 @@ public class MatchDocument {
 
     private String jobTitle;
 
-    private float height;
+    private double height;
 
     private CityDocument city;
 
     private String mainPhoto;
 
-    private float compatibilityScore;
+    private double compatibilityScore;
 
     private int contactsExchanged;
 

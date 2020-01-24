@@ -9,6 +9,6 @@ import lombok.Setter;
 @Setter
 public class CityJSON {
     private String name;
-    private float lat;
-    private float lon;
+    private double lat;
+    private double lon;
 }

@@ -20,7 +20,7 @@ public class MatchJSON {
     private String jobTitle;
 
     @JsonProperty(value = "height_in_cm")
-    private float height;
+    private double height;
 
     private CityJSON city;
 
@@ -28,7 +28,7 @@ public class MatchJSON {
     private String mainPhoto;
 
     @JsonProperty(value = "compatibility_score")
-    private float compatibilityScore;
+    private double compatibilityScore;
 
     @JsonProperty(value = "contacts_exchanged")
     private int contactsExchanged;
@@ -36,4 +36,6 @@ public class MatchJSON {
     private boolean favourite;
 
     private String religion;
+
+    private double dis;
 }
