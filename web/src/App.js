@@ -10,13 +10,12 @@ class App extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {host: 'http://localhost:9090', filters: {}};
+		this.state = {host: '', filters: {}};
 		this.onFilterChange = this.onFilterChange.bind(this);
 	}
 
 	onFilterChange(filters) {
 		this.setState({filters: filters});
-		console.log(JSON.stringify(this.state.filters))
 	}
 
 	render() {

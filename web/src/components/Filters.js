@@ -53,7 +53,6 @@ class Filters extends React.Component {
 	}
 
 	onFilterApply(event) {
-		console.log(JSON.stringify(this.state.filters));
 		this.props.onFilterChange(this.state.filters);
 	}
 

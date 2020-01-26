@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-	Badge,
 	Card,
 	CardBody,
 	CardColumns,
@@ -38,7 +37,6 @@ class MatchList extends React.Component {
 
 	componentDidUpdate(prevProps, prevState) {
 		if (JSON.stringify(prevProps.filters) !== JSON.stringify(this.props.filters)) {
-			console.log("this.getMatchesURI()");
 			this.updateMatchList();
 		}
 	}
@@ -48,9 +46,9 @@ class MatchList extends React.Component {
 	}
 
 	getMatchesURI() {
-		var baseURI = this.props.host + '/matches/filter?';
+		var baseURI = '/matches/filter?';
 		let filters = new URLSearchParams(this.props.filters).toString();
-		console.log(baseURI + filters);
+		console.log("Requesting: " + baseURI + filters);
 		return baseURI + filters;
 	}
 
