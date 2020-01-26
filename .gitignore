@@ -7,8 +7,10 @@
 *.iml
 *.ipr
 
-gui/node_modules
 target
-package-lock.json
 built
 static/
+
+web/node_modules
+web/build
+package-lock.json

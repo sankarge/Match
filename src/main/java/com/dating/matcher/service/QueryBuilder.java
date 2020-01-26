@@ -87,10 +87,10 @@ class QueryBuilder {
                 .orElse(nearQuery(500));
     }
 
-    private static NearQuery nearQuery(Integer distance) {
+    private static NearQuery nearQuery(int distance) {
         return NearQuery
                 .near(LONDON_CENTRAL)
-                .maxDistance(new Distance(distance, Metrics.KILOMETERS));
+                .maxDistance(new Distance(++distance, Metrics.KILOMETERS));
     }
 
     private Query getQueryWithAllCriteria() {
