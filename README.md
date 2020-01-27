@@ -1,4 +1,4 @@
-# Match
+# Match ![Java CI](https://github.com/sankarge/Match/workflows/Java%20CI/badge.svg)
 
 The application is live on Google cloud running as a serverless container app - [Knative](https://knative.dev/)
 
