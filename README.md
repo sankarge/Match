@@ -68,6 +68,8 @@ And navigate to http://localhost:8080
  - Add @Profile("saveSampleMatches") to persist sample records from *matches.json* file
  
  - The images for the profiles from [randomuser](https://randomuser.me/) for better GUI experience
+ 
+ - Similarly, LONDON_CENTRAL (51.5071576, -0.1275761) is considered as the location of user for better GUI experience.
 
 ## Front-end
 ReactsJs based web-app with bootstrap responsive design.
