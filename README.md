@@ -35,6 +35,8 @@ Spring boot app with MongoDB for persistence.
 - [QueryBuilder](src/main/java/com/dating/matcher/service/QueryBuilder.java) Exposes fluent API that simplifies creation of Query
 - [MatchService](src/main/java/com/dating/matcher/service/MatchService.java) Leverages MongoTemplate to achieve complex filter conditions with all possible combinations 
 
+- [MatcherApplicationIntegrationTest](src/test/java/com/dating/matcher/MatcherApplicationIntegrationTest.java) covers the service module with 100% tested code.
+
 ### Match filter requests
 Supports all combinations of filters
 
